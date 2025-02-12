@@ -7,6 +7,9 @@ endfunction
 
 function next();
     count--;
+    if (count < min) begin
+  	count = max;
+    end
     $display("down_count = %d",count);
 endfunction
 

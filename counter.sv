@@ -5,13 +5,14 @@ int max;
 int min;
 
 function new(int count = 0, int minValue = 0, int maxValue = 10);
-    this.count=count;
-    this.max = maxValue;
-    this.min = minValue;
+//   #11
+ 	this.check_limit(minValue, maxValue);
+  	this.check_set(count); 	
 endfunction
 
-function void load(input bit count);
-    this.count=count;
+  function void load(input int count);
+//   #12	
+    this.check_set(count); 
 endfunction
 
 function int getcount();
@@ -21,11 +22,11 @@ endfunction
 // #8
 function void check_limit(input int value1,input int value2);
     if(value1 > value2) begin
-    max  = value1;
-    min  = value2;
+    this.max  = value1;
+    this.min  = value2;
     end else begin
-    min  = value1;
-    max  = value2;
+    this.min  = value1;
+    this.max  = value2;
     end
 endfunction
 

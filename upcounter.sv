@@ -6,6 +6,10 @@ endfunction
 
 function next();
     count++;
+    // 13
+    if (count > max) begin
+    count = min;
+    end
     $display("up_count = %d",count);
 endfunction
 
